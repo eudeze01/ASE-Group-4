@@ -1,6 +1,9 @@
 import * as db from "./dbstub.js";
+import mapstyles from "./mapstyle.js"
 
 // Import Google Maps
+const "GOOGLE_API_KEY" = "YOUR_API_KEY";
+
 ((g) => {
   var h,
     a,
@@ -44,35 +47,64 @@ const { Marker } = await google.maps.importLibrary("marker");
 let map;
 let vehicleMarkers = [];
 const centerPos = { lat: 51.5195786, lng: -0.0606907 };
+const carIcon = {
+  url: "/images/car.png",
+  scaledSize: new google.maps.Size(20, 43),
+  origin: new google.maps.Point(0, 0),
+  anchor: new google.maps.Point(0, 0),
+};
 
 // Initialize Map
 async function initMap() {
   map = new Map(document.getElementById("GMap"), {
     zoom: 13,
     center: centerPos,
-    mapId: "DEMO_MAP_ID",
   });
+  
+  map.setOptions({ styles: mapstyles.darkStyle });
 }
 
 initMap();
 retrieveVehicles();
 
+// Remove vehicle markers from map
 function removeVehicleMarkers() {
   vehicleMarkers.forEach((e) => {
     e.setMap(null);
   });
 }
 
+//Retrieve vehicle positions from API and 
+//display them on the map
 function retrieveVehicles() {
   removeVehicleMarkers();
   vehicleMarkers = [];
-  db.getVehicles().forEach((e) => {
-    let pos = { lat: e.lat, lng: e.lng };
-    vehicleMarkers.push(
-      new Marker({
-        position: pos,
-        map,
-      })
-    );
+  
+  db.getVehicles()..then((c) => {
+    if (Array.isArray(c)) {
+      c.forEach((v_pos) => {
+        if (
+          (v_pos.id !== "undefined") &
+          (v_pos.lat !== "undefined") &
+          (v_pos.lng !== "undefined")
+        ) {
+          try {
+            let pos = {
+              lat: parseFloat(v_pos.lat),
+              lng: parseFloat(v_pos.lng),
+            };
+            vehicleMarkers.push(
+              new Marker({
+                position: pos,
+                map,
+                icon: carIcon,
+              })
+              );
+          } catch (error) {
+            console.error(error);
+          }
+        }
+      });
+    };
   });
 }
