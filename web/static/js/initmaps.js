@@ -1,8 +1,8 @@
 import * as db from "./dbstub.js";
-import mapstyles from "./mapstyle.js"
+import mapstyles from "./mapstyle.js";
 
 // Import Google Maps
-const "GOOGLE_API_KEY" = "YOUR_API_KEY";
+const GOOGLE_API_KEY = "YOUR_API_KEY";
 
 ((g) => {
   var h,
@@ -38,7 +38,7 @@ const "GOOGLE_API_KEY" = "YOUR_API_KEY";
   d[l]
     ? console.warn(p + " only loads once. Ignoring:", g)
     : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
-})({ key: "API-KEY", v: "beta" });
+})({ key: GOOGLE_API_KEY, v: "beta" });
 
 const { Map } = await google.maps.importLibrary("maps");
 const { Marker } = await google.maps.importLibrary("marker");
@@ -60,7 +60,7 @@ async function initMap() {
     zoom: 13,
     center: centerPos,
   });
-  
+
   map.setOptions({ styles: mapstyles.darkStyle });
 }
 
@@ -74,13 +74,13 @@ function removeVehicleMarkers() {
   });
 }
 
-//Retrieve vehicle positions from API and 
-//display them on the map
+// Retrive vehicle positions from API and
+// display them on the map
 function retrieveVehicles() {
   removeVehicleMarkers();
   vehicleMarkers = [];
-  
-  db.getVehicles()..then((c) => {
+
+  db.getVehicles().then((c) => {
     if (Array.isArray(c)) {
       c.forEach((v_pos) => {
         if (
@@ -99,12 +99,12 @@ function retrieveVehicles() {
                 map,
                 icon: carIcon,
               })
-              );
+            );
           } catch (error) {
             console.error(error);
           }
         }
       });
-    };
+    }
   });
 }
