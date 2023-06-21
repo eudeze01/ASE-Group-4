@@ -8,8 +8,6 @@ const vehicles = [
   { id: "8efT67Xd", lat: 51.54458615, lng: -0.0161905117168855 },
 ];
 
-export function getVehicles() {
-  return vehicles;
+export async function getVehicles() {
+  return await (await fetch("/getVehicles")).json();
 }
-
-// module.exports = { getVehicles };
