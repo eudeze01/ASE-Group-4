@@ -2,7 +2,7 @@ import * as db from "./dbstub.js";
 import mapstyles from "./mapstyle.js";
 
 // Import Google Maps
-const GOOGLE_API_KEY = "YOUR_API_KEY";
+const GOOGLE_API_KEY = "GOOGLE_API_KEY";
 
 ((g) => {
   var h,
@@ -64,8 +64,9 @@ async function initMap() {
   map.setOptions({ styles: mapstyles.darkStyle });
 }
 
-initMap();
-retrieveVehicles();
+initMap().then(() => {
+  retrieveVehicles();
+});
 
 // Remove vehicle markers from map
 function removeVehicleMarkers() {
@@ -93,13 +94,23 @@ function retrieveVehicles() {
               lat: parseFloat(v_pos.lat),
               lng: parseFloat(v_pos.lng),
             };
-            vehicleMarkers.push(
-              new Marker({
-                position: pos,
-                map,
-                icon: carIcon,
-              })
-            );
+
+            const marker = new Marker({
+              position: pos,
+              map,
+              icon: carIcon,
+            });
+
+            // For debugging purpose
+            new google.maps.InfoWindow({
+              content: v_pos.id,
+            }).open({
+              anchor: marker,
+              map,
+            });
+            // End For debugging purpose
+
+            vehicleMarkers.push(marker);
           } catch (error) {
             console.error(error);
           }
@@ -108,3 +119,5 @@ function retrieveVehicles() {
     }
   });
 }
+
+export const mapObject = map;

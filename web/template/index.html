@@ -4,12 +4,113 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dealride</title>
-    <script type="module" src="/js/initmaps.js"></script>
+    <title>Cab Me</title>
+    <!-- Loding Application JS -->
+    <!-- <script type="module" src="/js/initmaps.js"></script> -->
+    <script type="module" src="/js/notuber.js"></script>
+
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/main.css" /> -->
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h2>Dealride</h2>
     <div id="GMap" class="GMap"></div>
+
+    <div id="ui" class="border p-3 bg-white">
+      <div class="p-3 ps-0">
+        <h1 class="fs-3">Welcome to CabMe</h1>
+      </div>
+
+      <!-- UI elements -->
+      <div id="">
+        <!-- Input for start -->
+        <label for="inputGrp_start" class="form-label">Start</label>
+        <div id="inputGrp_start" class="input-group mb-3">
+          <input
+            id="input_start"
+            class="form-control"
+            list="start-data-list"
+            autocomplete="off"
+          />
+          <span class="input-group-btn">
+            <button id="btn_select_map_start" class="btn btn-outline-dark">
+              <i class="bi bi-pin-map-fill"></i>
+            </button>
+          </span>
+          <datalist id="start-data-list">
+            <option value="Test Address 1"></option>
+            <option value="Test Address 2"></option>
+            <option value="Test Address 3"></option>
+          </datalist>
+        </div>
+
+        <!-- Input for destination -->
+        <label for="" class="form-label">Destination</label>
+        <div id="inputGrp_destination" class="input-group mb-3">
+          <input
+            id="input_destination"
+            class="form-control"
+            list="dest-data-list"
+            autocomplete="off"
+          />
+          <span class="input-group-btn">
+            <button
+              id="btn_select_map_destination"
+              class="btn btn-outline-dark"
+            >
+              <i class="bi bi-pin-map-fill"></i>
+            </button>
+          </span>
+          <datalist id="dest-data-list">
+            <option value="Test Address 1"></option>
+            <option value="Test Address 2"></option>
+            <option value="Test Address 3"></option>
+          </datalist>
+        </div>
+
+        <div class="d-grid">
+          <button
+            id="book_vehicle"
+            class="btn btn-outline-primary my-3"
+            type="submit"
+          >
+            Book A Vehicle
+          </button>
+        </div>
+      </div>
+
+      <!-- Result Display -->
+      <div
+        id="confirm_info"
+        class="border border-success rounded-3 mt-4 p-3 d-none"
+      >
+        <h2 class="fs-5 mb-3">
+          Booking Confirmed
+          <i class="bi bi-check-circle-fill ms-2 text-success"></i>
+        </h2>
+        <div class="border p-3">
+          <div class="mb-3">
+            <label class="">Vehicle Id</label>
+            <div id="vehicle_id" class="info_strip">lkajsdf</div>
+          </div>
+          <div class="mb-3">
+            <label class="">Time to arrive</label>
+            <div id="time_to_arrive" class="info_strip">lkajsdf</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
