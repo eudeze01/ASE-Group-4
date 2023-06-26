@@ -12,7 +12,7 @@ class SQLiteConnection:
         cursor = self.con.cursor()
 
         # Creating VehiclePosition Table to store vehicle positions
-        create_table_sql = """
+        create_VehiclePos_table_sql = """
             CREATE TABLE IF NOT EXISTS VehiclePosition(
                 id TEXT PRIMARY KEY     NOT NULL,
                 lat TEXT                NOT NULL, 
@@ -20,15 +20,31 @@ class SQLiteConnection:
             );
         """
 
-        cursor.execute(create_table_sql)
+        cursor.execute(create_VehiclePos_table_sql)
         print("\t** Created Table VehiclePositions")
 
         #Populating test data for Vehicles Table
         f = open(".\\db\\test_vehicle_data.json", 'r');
         d = json.load(f)
         
+        # Bulk insert to VehiclePostition or Ignore if exists.
         cursor.executemany('INSERT OR IGNORE INTO VehiclePosition (id, lat, lng)'
                            ' VALUES (:id, :lat, :lng)', d['vehicles'])
+        
+        #Creating Bookings Table
+        create_Booking_table_sql = """
+            CREATE TABLE IF NOT EXISTS Booking(
+                id              INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                vehicle_id     TEXT UNIQUE,
+                start_x         TEXT NOT NULL,
+                start_y         TEXT NOT NULL,
+                end_x           TEXT NOT NULL,
+                end_y           TEXT NOT NULL
+            )
+        """
+        cursor.execute(create_Booking_table_sql);
+        print("\t** Created Table Bookings")
+
         self.con.commit()
         cursor.close()
     
@@ -42,11 +58,28 @@ class SQLiteConnection:
         return {key: value for key, value in zip(fields, row)}
 
     # Get Data from table VehiclePositions
-    def getAllVehicles(self) -> dict:
-        cursor = self._read('SELECT * FROM VehiclePosition')
+    def getAllVehicles(self, exludeBooked = False) -> dict:
+        sql = 'SELECT * FROM VehiclePosition'
+        if exludeBooked:
+            sql += " WHERE id not in (SELECT vehicle_id from Booking)"
+        cursor = self._read(sql=sql)
         cursor.row_factory = self._dict_factory;
         return cursor.fetchall()
 
+    def book(self, vehicleId, start_x, start_y, end_x, end_y):
+        sql = '''INSERT INTO Booking(vehicle_id, start_x, start_y, end_x, end_y) 
+                VALUES('{0}', '{1}', '{2}', '{3}', '{4}')'''.format(vehicleId, start_x, start_y, end_x, end_y)
+        print(sql);
+        cursor = self.con.cursor();
+        cursor.execute(sql);
+        self.con.commit();
+        cursor.close();
+
+    def resetDataState(self):
+        self.con.execute('DELETE FROM Booking')
+        self.con.execute('DELETE FROM VehiclePosition')
+        self._createTables();
+    
 #Testing
 if __name__ == '__main__':
     print(":::SQLiteConnection tests")
