@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CabMe : Driver Profile</title>
+
+    <!-- Main Css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+
+    <!-- ui logic js -->
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=WtLT--hWDpgs-mVhyPiCXIp2axbI-KjibX0lJ2S3VTagTAip3BtNq0tX20TPytS5lCSbxUtu5k9jtQsthaO30585_TdLug-WNQacRHc_wycvPqkGpx03jc_NKo7MA3-l1PhJyzSh5PL5U2UyE4FZt9DWZatOR0PX-czdX_yPibfAnHG8-R3daH-t8CMwnjUUvFn686qxuqQmiQR5E32x9MMyV0B1U-WrNm9FczMfwt9q8xvRjg7iN4FKwAvnORv1BYywktJvHd_2QwmTzg01qgdL6dFMuqsI3UhyOTGXeDP5msDHJmjmCNWcu6OohN7N_amqNbybyfSnH_J5QlGPTBgtT8b9xzX5BA-xoTODEH964FipHy3wyyEt0oTL3BUPI1m-IcFsq0KU6CefQB8RG-mTstNI3K-kIriFxPJfQdMESUSYV_X-e0pfZF-VGWIqX2_SRy9ytYkNNk0vCNgmsfANLllPkNEo7sIBRXBZ93xceHGqur8DNwTDTdruUf65rcecd2prCQUQAIZPV7BWobDG0NRt7Irjwo7PO2tnKXtoO5JURV-y-ZMEtJ63HVQY9pbMeVFPF2tvkSpKMwf2_wE1CdSsTL2WnIDwgk4idqNplpk-dBnIzQrPjOXcL-SY3sIhdZzVteQBysKLP_8Wpb7WlB23Gm4S8gjCV5lpVhuYJA8bN2FsYx3tNzCGCJkrB-gWencguhsY9657taAdJUKOffrNRsekA_R02AwsDulcurAFgjDZC7vSNIdtpKVU6PkWiVYj60mZFq1wHHFF1VX5lRpL_K6jB8ARVPElnwybwJNhEezcofFgy9Dx3TL35hSl9_n7L9GlRkacBgEVgChDGwQkN9qFtniK2VmRoNRLkcmpWshZ6ghi4zb6mzfLkNThSLRs02ezlF8H43rTioZYi4dGNpTApQ87-9osobkjvlh_AQrbo54atLWTsaTb_kb2GNKqgnLq81Vhs26za9zg29NWtmplr9y2AiYV5i7qaLPanbissslYw1Eri6BCMAVNJ2j1YtqNxdf5PIc2yFsxsWaUCfT3sJ9SwyVznkAa9Eqe2HyDvUexUQArl3MDpeA-nchKtGz5vsCVhRm5NrAZz_ZOmQIukJxz5s7hdk6BJ7vRTDw7Al1Q0ocPenlB71jgPHwmFALEaMMnRDXSoMTWrBXJpkIElUyNVA14IMi6ezepTfc7o8vS5Ews3fqmx5h-OJAWgD5u0boG_wa0dib59aSaaqJ9vY5QSbZUr47SmIgtDo_md7pP0rB5A-LKvIso9eWDxnJ9M_-F3vTerTZN5em_Ke5ggdBiWyB0rUnjy2R3AYuI7gKrdPaE7_svI92aJcF7rOkaynOcChi5I1Syitdiz1r1z8-Sy0yF-bitGUEkHxOGwEfBWdfZWAyjcWqrpzUmZB6EXba6qw2WVyNrWq5t06QxRVmvR0kAIwLiplraXECF-f3fE4Lrul5uBP1SSgBqkFVW3_9AwTZLey8B40OnCn-Wl110iS0Lqk49rH_jONgB26fZnsWsVytSEqF98UC5Y66e0nX1N6hNWX4mJW5bnpecujWeCcxEIjN7w3rXQBIDMHkeSPnRj205l6g9fIM3yhuWMTdTTyUm-egz5K08I2vlnJ1vkMsijKr8mT1Afy8z95-VdJZzDOos3sqDcgb-Dc_AGF3KiPFnrQ" nonce="860248ff89f713205c8758b23478bf70" charset="UTF-8"></script><script type="module" src="/js/driver_ui.js"></script>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="p-4 ps-3 ps-md-5 bg-dark text-white d-flex">
+      <div class="d-flex flex-column">
+        <h2 class="fs-5">Welcome to CabMe</h2>
+        <div class="d-flex align-items-center gap-5">
+          <h1 class="fs-2">Driver Profile</h1>
+          <a class="text-white" href="/logout"
+            >Logout <i class="bi bi-box-arrow-right ms-1"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="flex-grow-1">
+        <div class="flex-column">
+          <p id="total" class="fs-4 mb-0 text-end">Total Earnings</p>
+          <p id="today_earn" class="fs-4 mb-0 text-end">Today Earnings</p>
+        </div>
+      </div>
+    </div>
+    <div id="driver_profile" class="ps-3 ps-md-5 mt-3 d-flex">
+      <!-- Profile/Vehicle Info View -->
+      <div class="col-md-2 pt-3">
+        <div
+          class="p-4 border border-dark rounded-3 rounded-bottom-0 bg-body-tertiary"
+        >
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-column">
+              <div class="d-flex flex-column pb-2 border-bottom">
+                <label class="fst-italic"
+                  ><i class="bi bi-person pe-2"></i>Name
+                </label>
+                <span id="driver" class="fs-5 fw-semibold">{{name}}</span>
+              </div>
+
+              <div class="d-flex flex-column pb-2 border-bottom">
+                <label class="fst-italic"
+                  ><i class="bi bi-at pe-2"></i>E-mail
+                </label>
+                <span id="email" class="fs-5 fw-semibold">{{email}}</span>
+              </div>
+
+              <div class="d-flex flex-column">
+                <label class="fst-italic"
+                  ><i class="bi bi-star pe-2"></i> Rating
+                </label>
+                <span class="fs-5 fw-semibold">
+                  {% if rating|float > 0 %} {{rating * 5}} / 5 {%else%} not yet
+                  available {%endif%}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 mt-1 border border-dark bg-body-tertiary">
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-column pb-2 border-bottom">
+              <label class="fst-italic">Vehicle Plate</label>
+              <span id="vehicle_plate" class="fs-5 fw-semibold">{{plate}}</span>
+            </div>
+
+            <div class="d-flex flex-column pb-2 border-bottom">
+              <label class="fst-italic">Model</label>
+              <span id="vehicle_model" class="fs-5 fw-semibold">{{model}}</span>
+            </div>
+
+            <div class="d-flex flex-column pb-2">
+              <label class="fst-italic">Type</label>
+              <span id="vehicle_type" class="fs-5 fw-semibold">{{v_type}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 pt-3 mt-1 border border-dark rounded-3 rounded-top-0">
+          <!-- <h4>Fair Calculation</h4> -->
+          <span class="fst-italic d-block text-end">Fair Calculation</span>
+          <div class="mb-3">
+            <span class="d-inline-block">Surcharges:</span>
+            <span class="d-block ps-3">5pm - 10pm : 5 £</span>
+            <span class="d-block ps-3">10pm - 6am : 6 £</span>
+          </div>
+          <div>
+            <span class="d-inline-block">Charges:</span>
+            <span class="d-block ps-3">1st 5Km : 1.2 £</span>
+            <span class="d-block ps-3">Every other 1Km : 1 £</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Journeys and earnings -->
+      <div class="col-10 p-5">
+        <div class="mb-4">
+          <h2 class="">Journey History</h2>
+        </div>
+        <div id="" class="border">
+          <div id="spinner" class="text-center d-block mt-5">
+            Loading...
+            <div class="spinner-border text-center mx-3" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+
+          <div id="table_view" class="d-none">
+            <table class="table">
+              <thead>
+                <th>Start Date/Time</th>
+                <th>End Date/Time</th>
+                <th>Rating</th>
+                <th>Fair</th>
+              </thead>
+              <tbody id="pj_t_body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
