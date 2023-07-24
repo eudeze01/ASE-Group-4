@@ -16,6 +16,35 @@
 }
 
 #ui .info_strip {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
+}
+#ui .info_strip #model,
+#ui .info_strip #type {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+#ui .info_strip #rating {
+  font-size: 1rem;
+  /* line-height: rem; */
+  line-height: 30px;
+  /* border: 1px solid red; */
+}
+
+#login input:focus {
+  outline-style: none !important;
+  box-shadow: none;
+  /* border: 1px solid green !important; */
+  border-bottom-width: 2px !important;
+}
+
+/* #rating_stars > i:hover ~ i {
+  color: red;
+  border: 1px solid red;
+} */
+#rating_stars > i:hover ~ i,
+#rating_stars > i:hover {
+  color: #0d6efd;
+  /* border: 1px solid red; */
 }
