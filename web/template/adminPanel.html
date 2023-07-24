@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CabMe : Admin</title>
+
+    <!-- Main Css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+
+    <!-- ui logic js -->
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=EAkM13XOgdyaeOeK3I463mP0MvmPIteCsU7cTR-sj_9EP6RevcmPc36Zsqu_Ft9QShxUGp_VjJaKbYiZ4gkcngJ3Jy9-Lc0bQgISv2BcYTpoSEt1ZB9lUjdmR9KS7D4x41ixMW0z3MViTN98FaIUChOVTKkx7mBuU7hlhF7J04C0s343f-vrE6FppgmsJqqy0azBAXax0MA8Rd6kOg71-mVMNtn-37IYzyKW2La_bmyQWM9uCYBq_FW7wv0VvHC0vh_tIhLbyuKeLSsHPd24SCUm_gV3wDblSlSa34y8tMsPeoT5C2THYUvaYvHEQp6fmenCys9Q2NToDFIcGzHf2KEC8yIz0xSMJfWLw1LB2bB7JW4hsGM1sPpcvhyuqMHyuj5JriWpUz0zS7TWIHsoKc07mN5vXrfQSgQaZ2manBWOCW-6ZL-kVUWXnmBxO1bZg94P1I_mcNAhoha8iPjwTvLvEkhQulcp1k0ugwwWhIojWNR1r4ohXKq-H8Vz9no03_KYYOMiWQlkYU6j8Z43hByTxGMCEE1zZFD1s4it4IWlV64MNtWsybbWRIAReUmR3Mv2tupDsK0Rhfe1Ql0RIvpQL8VONQG-xLkoOEapeCC_MYmNtxu1elJqBbVc23hXrfI1_Kyf79Wp6dngNZmVKqXiPbDCEcGMSmtf5OXmZE1Jz7x28vqxemhMy3eU20EcAMJqwbXFKMtw7nXWNo0QiizIxoURqN5g93Q7lo2UOpv-Ee7BPP18JAhy5UJqbEZi48uPtPSOBYVKTF9Fy3L-5eC_fjXE7ov2mL8t1n6sDDrqguCSqTZVpUC7jO9v6WG_7_Fq3Ed_c2nV4AQNVsrla1aAyeBl-KYqo8wGZyPr01FJAVC42-EY1gkhCCKp5s_aA9Zw4_KpkmW9o3nKZsK8QOlx2pwuOtrHjkJxkP3MyDhx1zfnZe8EixX7EuxXk8ibOvzzIFnPTgVg8FMQaZvmGo5P-cK37QhoWrFtm-sbHRXPMyLj05BNntoKAPOhc_49izRf3_TAllSYsR3noJRRFJxaJ3u-Jx6wZzn-HkvT9SY_0Jc8n1yi95wcY_HG2OEH0zkSe_srJLLdMewohEDaKxS8Rt5rqlheH0gsEEbyZW-6ZG-F1a4xa-pZCIVw-B62svEUAow_RffCUHWARq7R1mI63IJ7rV2RpJbRyfOEX0CmwMzH2no9kxofy0NEHF4NNg3xRkKG2aG3iv9CYOrpSCGmIUt6kFI6TQGToJNZ2ZCbZhlUInw3OrImMsZwOPxJPYfx8KNWl5oQCc_s_HUufE0DL07fxZjkbVtyEaLOG7-EHXmAjBm8zDH2L-cJTmXuUZx1nX5pPhkI1gomTO6BeG18TiER9LiuYhErBtRYEzIsHthRnI7EXsfXwN7Z2rYOFAcbAm0yC4QTlytGDKjMJhlWi_HtoCBPxH6Xc1vRhc8KuIopc4BnUCHyvDMdTT53M6l37ASwQhCwnTiylU9FwAKgomRwHKWUw3qWcLKodbTODsPEjBVnLPcIWRMMZFiVWQqXA299tGyt3K0T6w1lbEuxonUlj1tuE3R65IAJgYIPuvZpaqPBIGoHRhHoF_v-R4cw_MNuIni7r8GirmkXKtwFQIV_O7LY_y-_haKnHObb5X5PNV4tZJku0_Gm5sYimcYtQ3XVjM6E-kbDFz4IOw" nonce="d301f7d56588f301fa23cb458362aef8" charset="UTF-8"></script><script type="module" src="/js/admin_ui.js"></script>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="p-4 ps-3 ps-md-5 bg-dark text-white d-flex">
+      <div class="d-flex flex-column">
+        <h2 class="fs-5">Welcome to CabMe</h2>
+        <div class="d-flex align-items-center gap-5">
+          <h1 class="fs-2">Admin Dashboard</h1>
+          <a class="text-white" href="/logout"
+            >Logout <i class="bi bi-box-arrow-right ms-1"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <!-- Data -->
+    <div id="" class="border p-5 pt-2">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#panel_drivers"
+            data-bs-toggle="collapse"
+            aria-expanded="false"
+            aria-controls="panel_drivers"
+            >Drivers/Vehicles</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#panel_transac"
+            data-bs-toggle="collapse"
+            aria-expanded="false"
+            aria-controls="panel_transac"
+            >Transactions</a
+          >
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li> -->
+      </ul>
+
+      <div id="main_panels">
+        <!-- Drivers/Vehicles Panel -->
+        <div
+          id="panel_drivers"
+          class="border border p-3 collapse show"
+          style="transition: none; -webkit-transition: none"
+          data-bs-parent="#main_panels"
+        >
+          <h2 class="mb-4">Drivers</h2>
+          <div class="">
+            <div id="spinner" class="text-center d-block mt-5">
+              Loading...
+              <div class="spinner-border text-center mx-3" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+
+            <table id="driver_table" class="table d-none border">
+              <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Vehicle Plate</th>
+                <th>Vehicle Type</th>
+                <th>Vehicle Model</th>
+              </thead>
+              <tbody id="driver_t_body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Transactions Panel -->
+        <div
+          id="panel_transac"
+          class="border border p-3 collapse"
+          style="transition: none; -webkit-transition: none"
+          data-bs-parent="#main_panels"
+        >
+          <div class="d-flex mb-4">
+            <div>
+              <h2>Journeys and Transactions</h2>
+              <p>Sorted descending by End Date/Time</p>
+            </div>
+            <div class="ms-5">
+              <div class="d-block fs-6 fst-italic text-body-secondary">
+                Search by Driver Name or Vehicle Plate
+              </div>
+              <div class="d-inline-flex align-items-center gap-2">
+                <input id="search_input" class="form-control" type="text" />
+                <button id="btn_search_trans" class="btn btn-outline-secondary">
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div id="spinner_trans" class="text-center d-block mt-5">
+              Loading...
+              <div class="spinner-border text-center mx-3" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+
+            <table id="trans_table" class="table d-none border">
+              <thead>
+                <th>Vehicle Id</th>
+                <th>Vehicle Plate</th>
+                <th>Driver Name</th>
+                <th>Start Date/Time (UTC)</th>
+                <th>End Date/Time (UTC)</th>
+                <th>Rating</th>
+                <th>Fair</th>
+              </thead>
+              <tbody id="trance_t_body"></tbody>
+            </table>
+
+            <div
+              class="d-flex justify-content-center bg-success text-white p-2 fs-5"
+            >
+              <span class="mx-4">Total Fair : <span id="tot_fair"></span></span>
+              <span class="mx-4"
+                >Average Fair : <span id="avg_fair"></span
+              ></span>
+              <span class="mx-4"
+                >Average Rating : <span id="avg_rating"></span
+              ></span>
+              <span class="mx-4"
+                >Journey Count : <span id="jrn_count"></span
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
