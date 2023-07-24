@@ -9,5 +9,10 @@
 // ];
 
 export async function getVehicles() {
-  return await (await fetch("/getVehicles")).json();
+  return await (await fetch("/api/getCurrentVehicles")).json();
+}
+
+export async function getBingKey() {
+  const obj = await (await fetch("/api/getBingKey")).json();
+  return obj.key;
 }
