@@ -2,7 +2,7 @@ import * as db from "./dbstub.js";
 import mapstyles from "./mapstyle.js";
 
 // Import Google Maps
-const GOOGLE_API_KEY = "GOOGLE_API_KEY";
+const GOOGLE_API_KEY = "AIzaSyCCkUtxqneL4ztcf7VJxi6o7VJJjl2DJXI";
 
 ((g) => {
   var h,
@@ -59,13 +59,14 @@ async function initMap() {
   map = new Map(document.getElementById("GMap"), {
     zoom: 13,
     center: centerPos,
+    mapId: "4e8057931ee7fb2d",
   });
 
   map.setOptions({ styles: mapstyles.darkStyle });
 }
 
 initMap().then(() => {
-  retrieveVehicles();
+  // retrieveVehicles();
 });
 
 // Remove vehicle markers from map
@@ -73,11 +74,12 @@ function removeVehicleMarkers() {
   vehicleMarkers.forEach((e) => {
     e.setMap(null);
   });
+  vehicleMarkers = [];
 }
 
 // Retrive vehicle positions from API and
 // display them on the map
-function retrieveVehicles() {
+function _showAllVehicles() {
   removeVehicleMarkers();
   vehicleMarkers = [];
 
@@ -100,10 +102,10 @@ function retrieveVehicles() {
               map,
               icon: carIcon,
             });
-
+            console.log(v_pos);
             // For debugging purpose
             new google.maps.InfoWindow({
-              content: v_pos.id,
+              content: v_pos.id + "-" + v_pos.type,
             }).open({
               anchor: marker,
               map,
@@ -120,4 +122,40 @@ function retrieveVehicles() {
   });
 }
 
+function _addVehicle(lat, lng, content) {
+  const marker = new Marker({
+    position: { lat: lat, lng: lng },
+    map,
+    icon: carIcon,
+  });
+  // For debugging purpose
+  new google.maps.InfoWindow({
+    content: content,
+  }).open({
+    anchor: marker,
+    map,
+  });
+  // End For debugging purpose
+
+  vehicleMarkers.push(marker);
+}
+
+function _drawLine(latLngArray) {
+  // console.log(latLngArray);
+  const path = new google.maps.Polyline({
+    path: latLngArray,
+    strokeColor: "#0043FD",
+    strokeOpacity: 1.0,
+    strokeWeight: 5,
+  });
+
+  path.setMap(map);
+
+  return path;
+}
+
 export const mapObject = map;
+export const drawPolyLine = _drawLine;
+export const showAllVehicles = _showAllVehicles;
+export const removeMapVehicles = removeVehicleMarkers;
+export const addVehicle = _addVehicle;
